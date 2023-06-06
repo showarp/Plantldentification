@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const resolve = require('resolve');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
@@ -563,6 +564,17 @@ module.exports = function (webpackEnv) {
       ].filter(Boolean),
     },
     plugins: [
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: './node_modules/onnxruntime-web/dist/ort-wasm.wasm',
+            to: 'static/js',
+          },             {
+            from: './node_modules/onnxruntime-web/dist/ort-wasm-simd.wasm',
+            to: 'static/js',
+          }
+          ],
+        }),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
