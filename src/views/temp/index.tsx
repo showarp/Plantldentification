@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import ImageRecognition from '../imageRecognition';
+import * as ort from 'onnxruntime-web';
+
+async function identifyImg(){
+  const session = await ort.InferenceSession.create('sqNext.onnx')
+}
 
 const DragAndDropUploader: React.FC = () => {
   const [dragging, setDragging] = useState(false);
@@ -26,7 +31,7 @@ const DragAndDropUploader: React.FC = () => {
     // 处理上传的文件
     console.log(files);
   };
-
+  identifyImg();
   return (
     <div
       className={`dropzone ${dragging ? 'dragging' : ''}`}
