@@ -1,0 +1,21 @@
+.logo {
+    width: 75px;
+    height: 75px;
+    background-size: contain;
+}
+
+.logo-box {
+    width: 500px;
+    height: 100px;
+    color: #fff;
+    background: rgba(255,255,255,.25);
+    backdrop-filter: blur(10px) saturate(1.5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-text {
+    font-size: 30px;
+    margin-left: 10px;
+}

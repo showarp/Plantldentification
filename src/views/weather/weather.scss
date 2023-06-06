@@ -1,0 +1,23 @@
+.Weather-box {
+    height: 80px;
+    width: 300px;
+    color: #fff;
+    background: rgba(255,255,255,.25);
+    backdrop-filter: blur(10px) saturate(1.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+.Weather-box header {
+    display: flex;
+    justify-content: space-between;
+}
+.Weather-box header .Weather {
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+}
+.Weather-box header .Weatherimg {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+}
